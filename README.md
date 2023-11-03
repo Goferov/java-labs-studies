@@ -1,1 +1,1 @@
-# Programowanie w Javie - labolatoria
+# Programowanie w Javie - laboratoria
