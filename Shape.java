@@ -1,6 +1,6 @@
 public class Shape {
     public void print() {
-        System.out.println("Shape");
+        System.out.println(getClass().getSimpleName());
     }
 
     public static void main(String[] args) {

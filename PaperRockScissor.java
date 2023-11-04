@@ -23,10 +23,13 @@ public class PaperRockScissor {
         System.out.println("Twój wybór: " + choices[userChoice]);
         System.out.println("Wybór komputera: " + choices[computerChoice]);
 
-        switch ((userChoice - computerChoice + 3) % 3) {
-            case 0 -> System.out.println("Remis!");
-            case 1 -> System.out.println("Przegrałeś! " + choices[computerChoice] + " pokonuje " + choices[userChoice]);
-            case 2 -> System.out.println("Wygrałeś! " + choices[userChoice] + " pokonuje " + choices[computerChoice]);
-        }
+        int gameResult = (userChoice - computerChoice + 3) % 3;
+
+        System.out.println(switch (gameResult) {
+            case 0 -> "Remis!";
+            case 1 -> "Przegrałeś! " + choices[computerChoice] + " pokonuje " + choices[userChoice];
+            case 2 -> "Wygrałeś! " + choices[userChoice] + " pokonuje " + choices[computerChoice];
+            default -> throw new IllegalStateException("Niepoprawna wartość: " + gameResult);
+        });
     }
 }
