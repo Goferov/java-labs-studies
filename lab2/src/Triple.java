@@ -1,3 +1,5 @@
+package lab2.src;
+
 import java.util.Comparator;
 import java.util.Objects;
 
@@ -28,7 +30,7 @@ public class Triple<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 ext
 
     @Override
     public String toString() {
-        return "Triple<" + first + ", " + second + ", " + third + ">";
+        return "lab2.src.Triple<" + first + ", " + second + ", " + third + ">";
     }
 
     @Override

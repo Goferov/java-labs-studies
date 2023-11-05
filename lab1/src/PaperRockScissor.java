@@ -1,3 +1,5 @@
+package lab1.src;
+
 import java.util.Random;
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package lab1.src;
+
 public class Shape {
     public void print() {
         System.out.println(getClass().getSimpleName());
