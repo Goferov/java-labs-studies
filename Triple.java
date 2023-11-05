@@ -60,21 +60,18 @@ public class Triple<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 ext
     }
 
     public static <T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 extends Comparable<T3>> Comparator<Triple<T1, T2, T3>> reverseOrderComparator() {
-        return new Comparator<Triple<T1, T2, T3>>() {
-            @Override
-            public int compare(Triple<T1, T2, T3> triple1, Triple<T1, T2, T3> triple2) {
-                int compareFirst = triple2.getFirst().compareTo(triple1.getFirst());
-                if (compareFirst != 0) {
-                    return compareFirst;
-                }
-
-                int compareSecond = triple2.getSecond().compareTo(triple1.getSecond());
-                if (compareSecond != 0) {
-                    return compareSecond;
-                }
-
-                return triple2.getThird().compareTo(triple1.getThird());
+        return (triple1, triple2) -> {
+            int compareFirst = triple2.getFirst().compareTo(triple1.getFirst());
+            if (compareFirst != 0) {
+                return compareFirst;
             }
+
+            int compareSecond = triple2.getSecond().compareTo(triple1.getSecond());
+            if (compareSecond != 0) {
+                return compareSecond;
+            }
+
+            return triple2.getThird().compareTo(triple1.getThird());
         };
     }
 
