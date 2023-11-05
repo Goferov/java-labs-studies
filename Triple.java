@@ -28,7 +28,7 @@ public class Triple<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 ext
 
     @Override
     public String toString() {
-        return "Triple<" + first + ", " + second + "," + third + ">";
+        return "Triple<" + first + ", " + second + ", " + third + ">";
     }
 
     @Override
@@ -50,13 +50,13 @@ public class Triple<T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 ext
 
     @Override
     public int compareTo(Triple<T1, T2, T3> o) {
-        int compareFirst = this.first.compareTo(o.first);
+        int compareFirst = first.compareTo(o.first);
         if (compareFirst != 0) return compareFirst;
 
-        int compareSecond = this.second.compareTo(o.second);
+        int compareSecond = second.compareTo(o.second);
         if (compareSecond != 0) return compareSecond;
 
-        return this.third.compareTo(o.third);
+        return third.compareTo(o.third);
     }
 
     public static <T1 extends Comparable<T1>, T2 extends Comparable<T2>, T3 extends Comparable<T3>> Comparator<Triple<T1, T2, T3>> reverseOrderComparator() {
