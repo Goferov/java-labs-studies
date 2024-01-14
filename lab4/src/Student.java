@@ -1,3 +1,5 @@
+package lab4.src;
+
 import java.io.*;
 
 public class Student implements Serializable {
@@ -26,13 +28,13 @@ public class Student implements Serializable {
     public static void main(String[] args) {
         Student student = new Student("Jan", "Kowalski", "jan.kowalski@test.com", "123456");
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("student.ser"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("lab4/src/student.ser"))) {
             oos.writeObject(student);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("student.ser"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("lab4/src/student.ser"))) {
             Student deserializedStudent = (Student) ois.readObject();
             System.out.println("Deserializowany student: " + deserializedStudent);
         } catch (IOException | ClassNotFoundException e) {

@@ -1,8 +1,10 @@
+package lab4.src;
+
 import java.util.PriorityQueue;
 
 public class Job implements Comparable<Job> {
-    private String description;
-    private int priority;
+    private final String description;
+    private final int priority;
 
     public Job(String description, int priority) {
         this.description = description;

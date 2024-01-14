@@ -1,3 +1,5 @@
+package lab4.src;
+
 import java.util.Random;
 import java.util.stream.IntStream;
 
