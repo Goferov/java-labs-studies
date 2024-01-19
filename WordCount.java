@@ -40,7 +40,7 @@ class WordCounter {
     private final Path file;
     private ConcurrentHashMap<String, Integer> wordCounts = new ConcurrentHashMap<>();
     private final ExecutorService executor;
-    private final Map<Integer, Integer> linesPerThread = new HashMap<>();
+    private final ConcurrentHashMap<Integer, Integer> linesPerThread = new ConcurrentHashMap<>();
 
     public WordCounter(int numberOfThreads, Path file) {
         this.numberOfThreads = numberOfThreads;
