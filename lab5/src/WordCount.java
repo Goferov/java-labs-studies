@@ -1,14 +1,15 @@
+package lab5.src;
+
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class WordCount {
 
     public static void main(String[] args) {
         if (args.length != 2) {
-            System.err.println("java WordCount <number_of_threads> <file_path>");
+            System.err.println("java lab5.src.WordCount <number_of_threads> <file_path>");
             return;
         }
 
@@ -38,7 +39,7 @@ public class WordCount {
 class WordCounter {
     private final int numberOfThreads;
     private final Path file;
-    private ConcurrentHashMap<String, Integer> wordCounts = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, Integer> wordCounts = new ConcurrentHashMap<>();
     private final ExecutorService executor;
     private final ConcurrentHashMap<Integer, Integer> linesPerThread = new ConcurrentHashMap<>();
 
